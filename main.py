@@ -42,6 +42,7 @@ class Product:
                 self.printStyleOptions()
                 add_style = self.styleHandler()
                 self.style.append(add_style)
+                self.make_csv()
                 for proc in psutil.process_iter():
                     if not proc in process_list:
                         proc.kill()
@@ -113,7 +114,6 @@ def main():
         x.fileExist()
         x.add_image()
         x.image_show(x.files)
-        x.make_csv()
     else:
         print("Utwórz folder zdjecia")
 
